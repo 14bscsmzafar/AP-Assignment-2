@@ -1,4 +1,4 @@
-#Assignement 2
+#Smart Pointer Strings
 
 Source files of the following implementations are placed in their respective folders:
 
@@ -8,34 +8,34 @@ Source files of the following implementations are placed in their respective fol
 	Copied
 
 ____________________
-How to run
+##How to run
 ____________________
 
-##Windows
+###Windows
 
 Compile the main.cpp file in from a folder and execute the file compiled. You will be greeted with a random string of 3 different sizes.
 
 **Note: Please don't use String::getBuff() in windows as cout with char* array was including grabage values after the real string (due to the missing '\0' charactor at the end, suprisingly, it was working on linux g++ correctly). 
 
-##Linux g++
+###Linux g++
 
 Same as above except remove system("pause") at the end and replace it with the following code:
 :    cout << "Press any key to continue ..." << endl;
 :    cin.get();
 
 ___________________
-Additional Functions
+##Additional Functions
 ____________________
 
-##String::getBuff(), StringBuffer::getBuf()
+###String::getBuff(), StringBuffer::getBuf()
 
 	This function simply returns the char pointer to the array the object is currently pointing to. It was implemented just to print the strings without the hasle of looping using charAt()
 
 ___________________
-Implementation Specific Functions
+##Implementation Specific Functions
 ___________________
 
-##Reference Linking with COW
+###Reference Linking with COW
 	Constructors/Destructors:
 	
 		1. String::String()
@@ -48,7 +48,7 @@ ___________________
 	
 		A new StringBuffer object was initialized and the current  object was removed from the reference chain. If it was the only one left, the StringBuffer object was directly modified.
 
-##Owned
+###Owned
 
 	Additonal functions:
 		1. StringBuffer* String::leaveOwnership()
@@ -71,12 +71,12 @@ ___________________
 		If the object is not owner, it uses ownerPointer to get the to the StringBuffer class. Same is aplicable to charAt.
 
 
-##Copied
+###Copied
 
 	Identical to owned except a deep copying everytime.
 
 ______________
-Profiling
+##Profiling
 ______________
 
 Output of profiled data is placed in the profiling folder. In these folder, are sub directeries named with the implementation. In each directory, are 6 screenshots of profiling output. The strings were used:
